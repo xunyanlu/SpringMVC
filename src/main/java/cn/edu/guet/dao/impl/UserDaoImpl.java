@@ -93,8 +93,10 @@ public class UserDaoImpl implements UserDao {
             pstmt.setString(2, user.getAddress());
             i++;
 
-            pstmt.executeUpdate();
+            int save=pstmt.executeUpdate();
+
             conn.commit();
+            return save;
 
         } catch (SQLException e) {
             e.printStackTrace();

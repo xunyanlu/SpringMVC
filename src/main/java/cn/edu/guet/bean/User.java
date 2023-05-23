@@ -1,10 +1,10 @@
 package cn.edu.guet.bean;
 
-/**
- * @Author liwei
- * @Date 2023/5/16 19:45
- * @Version 1.0
- */
+
+
+
+
+
 
 public class User {
     private int userId;

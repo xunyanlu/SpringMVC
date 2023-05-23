@@ -1,6 +1,7 @@
 package cn.edu.guet.service;
 
 import cn.edu.guet.bean.User;
+import cn.edu.guet.common.ResponseData;
 
 import java.util.List;
 
@@ -13,7 +14,9 @@ public interface UserService {
 
     //缺少删除、修改
     String deleteUser(int id);
+
     List<User> viewUser();
-    String saveUser(User user);
+
+    ResponseData saveUser(User user);
     // 项目中要封装统一返回结果
 }

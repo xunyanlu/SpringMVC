@@ -89,6 +89,7 @@ public class DispatcherServlet extends HttpServlet {
                     System.out.println("String............" + request.getParameter(paramterList.get(i)));
                     parameterValues[i] = request.getParameter(paramterList.get(i));
                 } else {
+                    request.setCharacterEncoding("UTF-8");
                     //Bean
                     Object pojo = parameterType[i].newInstance();
                     //得到请求里所有的参数：Map<参数名, value>

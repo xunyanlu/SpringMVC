@@ -1,6 +1,7 @@
 package cn.edu.guet.service.impl;
 
 import cn.edu.guet.bean.User;
+import cn.edu.guet.common.ResponseData;
 import cn.edu.guet.dao.UserDao;
 import cn.edu.guet.dao.impl.UserDaoImpl;
 import cn.edu.guet.service.UserService;
@@ -30,15 +31,20 @@ public class UserServiceImpl implements UserService {
         }
 
     }
+
     @Override
     public List<User> viewUser() {
         return userDao.viewUser();
     }
-    @Override
-    public String saveUser(User user) {
-        int save=userDao.saveUser(user);
 
-        return null;
+    @Override
+    public ResponseData saveUser(User user) {
+        int save = userDao.saveUser(user);
+        if (save == 1) {
+            return new ResponseData("保存成功!", 200);
+        }
+        return ResponseData.fail("保存失败");
+
     }
 
 }

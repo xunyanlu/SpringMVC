@@ -1,6 +1,7 @@
 package cn.edu.guet.controller;
 
-import cn.edu.guet.bean.User;
+
+import cn.edu.guet.bean.Users;
 import cn.edu.guet.common.ResponseData;
 import cn.edu.guet.mvc.annotation.Controller;
 import cn.edu.guet.mvc.annotation.RequestMapping;
@@ -21,8 +22,8 @@ public class UserController {
     }
 
     @RequestMapping("/saveUser")
-    public ResponseData saveUser(User user){
-        return userService.saveUser(user);
+    public ResponseData saveUser(Users users){
+        return userService.saveUser(users);
     }
 
   /*  @RequestMapping("/saveUser")

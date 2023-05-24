@@ -43,9 +43,9 @@ public class DispatcherServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         ControllerMapping mapping = null;
         String requestURI = request.getRequestURI();
-        System.out.println("请求地址：" + requestURI);
+        System.out.println("aaaaa:" + requestURI);
         requestURI = StringUtils.substringBetween(requestURI, request.getContextPath(), ".do");
-        System.out.println("去掉前缀和后缀：" + requestURI);
+        System.out.println("bbbbb:" + requestURI);
         if (controllerMapping.containsKey(requestURI)) {
             mapping = controllerMapping.get(requestURI);
         }
@@ -60,7 +60,7 @@ public class DispatcherServlet extends HttpServlet {
         List<String> paramterList = new ArrayList<String>();
         Parameter[] params = handleMethod.getParameters();
         for (Parameter parameter : params) {
-            System.out.println("参数名字：" + parameter.getName());
+            System.out.println("ccccc:" + parameter.getName());
             paramterList.add(parameter.getName());
         }
 

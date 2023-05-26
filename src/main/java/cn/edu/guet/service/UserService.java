@@ -20,4 +20,7 @@ public interface UserService {
 
     ResponseData saveUser(Users users);
     // 项目中要封装统一返回结果
+    ResponseData getUserById(long id);
+    ResponseData getObjectById();
+    ResponseData updateUserById(long Id,Users users);
 }

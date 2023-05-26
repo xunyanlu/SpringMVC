@@ -7,10 +7,6 @@ import cn.edu.guet.mvc.annotation.Controller;
 import cn.edu.guet.mvc.annotation.RequestMapping;
 import cn.edu.guet.service.UserService;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
-import java.util.List;
-
 
 @Controller
 public class UserController {
@@ -25,23 +21,16 @@ public class UserController {
     public ResponseData saveUser(Users users){
         return userService.saveUser(users);
     }
-
-  /*  @RequestMapping("/saveUser")
-    public String saveUser(User user){
-        userService.saveUser(user);
-        System.out.println("保存用户");
-        return "viewUser.do";
+    @RequestMapping("/getUserById")
+    public ResponseData getUserById(long id){
+        return userService.getUserById(id);
     }
-    @RequestMapping("/deleteUser")
-    public String deleteUser(int id){
-        userService.deleteUser(id);
-        System.out.println(id);
-        return "viewUser.do";
+    @RequestMapping("/getObjectById")
+    public ResponseData getObjectById(){
+        return userService.getObjectById();
     }
-    @RequestMapping("/viewUser")
-    public String viewUser(HttpSession session){
-        List<User> userList = userService.viewUser();
-        session.setAttribute("userList",userList);
-        return "redirect:/viewUser.jsp";
-    }*/
+    @RequestMapping("/updateUserById")
+    public ResponseData updateUserById(long Id,Users users){
+        return userService.updateUserById(Id,users);
+    }
 }

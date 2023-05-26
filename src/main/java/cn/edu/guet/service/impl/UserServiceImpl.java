@@ -1,4 +1,5 @@
 package cn.edu.guet.service.impl;
+
 import cn.edu.guet.bean.Users;
 import cn.edu.guet.common.ResponseData;
 import cn.edu.guet.dao.UserDao;
@@ -53,4 +54,27 @@ public class UserServiceImpl implements UserService {
 
     }
 
+    @Override
+    public ResponseData getUserById(long id) {
+        return new ResponseData(userDao.getObjectById(id));
+    }
+
+    @Override
+    public ResponseData getObjectById() {
+        return ResponseData.ok(userDao.getObjectById());
+    }
+
+    @Override
+    public ResponseData updateUserById(long Id,Users users) {
+        int update = 0;
+
+        update = userDao.update(Id,users);
+
+        if (update == 1) {
+            return new ResponseData("修改成功!", 200);
+        }
+        return ResponseData.fail("修改失败");
+
+    }
 }
+

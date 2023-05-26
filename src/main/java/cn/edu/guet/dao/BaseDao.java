@@ -1,10 +1,11 @@
 package cn.edu.guet.dao;
 
 
-
 //T是指泛型：没有指定类型，例如save方法，可用user的对象，也可以用student的对象
+
 import java.lang.reflect.InvocationTargetException;
 import java.sql.SQLException;
+import java.util.List;
 
 /**
  * @Author liwei
@@ -14,6 +15,9 @@ import java.sql.SQLException;
 public interface BaseDao<T> {
 
     int save(T t) throws SQLException, NoSuchMethodException, InvocationTargetException, InstantiationException, IllegalAccessException;
-    T get(int id);
+    int update(long Id,T t);
+    T getObjectById(long id);
+    List<T> getObjectById();
+
 
 }

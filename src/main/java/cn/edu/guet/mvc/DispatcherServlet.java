@@ -84,6 +84,8 @@ public class DispatcherServlet extends HttpServlet {
                         parameterValues[i] = Integer.parseInt(request.getParameter(paramterList.get(i)));
                     } else if (parameterType[i].getTypeName().equals("float")) {
                         parameterValues[i] = Float.parseFloat(request.getParameter(paramterList.get(i)));
+                    }else if (parameterType[i].getTypeName().equals("long")) {
+                        parameterValues[i] = Long.parseLong(request.getParameter(paramterList.get(i)));
                     }
                 } else if (ClassUtils.isAssignable(parameterType[i], String.class)) {
                     System.out.println("String............" + request.getParameter(paramterList.get(i)));
